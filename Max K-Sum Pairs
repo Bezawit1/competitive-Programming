@@ -1,0 +1,27 @@
+var maxOperations = function(nums, k) {
+     const n = nums.length;
+    nums.sort((a, b) => a - b);
+    
+    let res = 0;
+    
+    let left = 0;
+    let right = n - 1;
+    
+    while (left < right) {
+        const sum = nums[left] + nums[right];
+        
+        if (sum < k) {
+            left++;
+        }
+        else if (sum > k) {
+            right--;
+        }
+        else {
+            res++;
+            left++;
+            right--;
+        }
+    }
+    
+    return res;
+};
