@@ -4,9 +4,10 @@ var minPairSum = function(nums) {
    
    let half = nums.length/2;
     
-    for (let i = 0; i < half; i++) {
-       sum = Math.max(sum, nums[i] + nums[nums.length - i - 1])
-    }
+   
+ for(let i = 0,j=nums.length-1 ;i<half&&j>=half;i++,j--){
+  sum=Math.max(sum,nums[i]+nums[j])
+ }
     
     return sum;
 };
