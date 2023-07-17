@@ -3,7 +3,11 @@ class Solution(object):
         hashmap={}
         maxLen=0
         left=0
-       
+        if s == ' ':
+            return 1
+        if s == "":
+            return 0
+
         
         for i in range(len(s)):
             char=s[i]
