@@ -1,5 +1,6 @@
 class Solution(object):
     def subsets(self, nums):
+        answer = []
         def backT (start_idx, candidates):
        
             answer.append(candidates[:])
@@ -12,7 +13,7 @@ class Solution(object):
                
                 candidates.pop()
             
-        answer = []
+        
         backT(0, [])
         return answer
 
