@@ -9,10 +9,10 @@ class Solution(object):
         if root is None:
             return []
         res=[]
-        if root:
-            res.extend(self.inorderTraversal(root.left))
-            res.append(root.val)
-            res.extend(self.inorderTraversal(root.right))
+        left_path = self.inorderTraversal(root.left)
+        res =  left_path + [root.val]
+        right_path = self.inorderTraversal(root.right)
+        res += right_path
         return res
-       
+    
         
