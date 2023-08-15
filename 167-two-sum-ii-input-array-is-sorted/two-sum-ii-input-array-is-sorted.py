@@ -1,20 +1,20 @@
 class Solution(object):
     def twoSum(self, numbers, target):
-        rightIndex=0
-        leftIndex=len(numbers)-1
+        n=len(numbers)
+        left_index = 0
+        right_index = n-1
         res=[]
-        while rightIndex<leftIndex:
-            sum=numbers[rightIndex]+numbers[leftIndex]
-            if sum<target:
-                rightIndex+=1
-            elif sum>target:
-                leftIndex-=1
-            elif sum==target:
-                res.append(rightIndex+1)
-                res.append(leftIndex+1)
-                
+        while left_index < right_index:
+            target_sum = numbers[left_index] + numbers[right_index]
+            if target_sum == target:
+                res.append(left_index + 1)
+                res.append(right_index + 1)
                 break
+            if target_sum > target:
+                right_index-=1
+            if target_sum < target:
+                left_index+=1
         return res
-      
+                
 
-       
+        
