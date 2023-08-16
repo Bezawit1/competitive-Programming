@@ -1,9 +1,9 @@
 class Solution(object):
     def findJudge(self, n, trust):
-        trust_people= set()
+        trust_people= []
         count ={} 
         for i,j in trust:
-            trust_people.add(i)
+            trust_people.append(i)
             if j in count:
                 count[j] +=1
             else:
