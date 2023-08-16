@@ -1,7 +1,7 @@
 class Solution(object):
     def findJudge(self, n, trust):
         trust_people= []
-        count ={} 
+        count={} 
         for i,j in trust:
             trust_people.append(i)
             if j in count:
@@ -13,6 +13,4 @@ class Solution(object):
                 return i
         return -1
        
-            
-
-        
+       
