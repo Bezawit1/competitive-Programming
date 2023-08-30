@@ -6,7 +6,7 @@ class Solution(object):
 
         def helper(currCity):
             visited[currCity] = True
-            for i in range(len(isConnected)):
+            for i in range(n):
                 if isConnected[i][currCity] == 1 and not visited[i]:
                     helper(i)
         for city in range(n):
