@@ -7,7 +7,7 @@ class Solution(object):
         for i in range(len(nums)-1):
             if nums[i] < i+1 < nums[i+1]:
                 count_group+=1
-        return count_group
+        return count_group 
         
 
         
