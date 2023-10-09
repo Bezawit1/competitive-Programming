@@ -3,7 +3,8 @@ class Solution(object):
         if len(nums) < 2:
             return 0
 
-        min_num, max_num = min(nums), max(nums)
+        min_num= min(nums)
+        max_num =  max(nums)
         bucket = max(1, (max_num - min_num) // (len(nums) - 1))
         num_buckets = (max_num - min_num) // bucket + 1
         buckets = [[] for _ in range(num_buckets)]
@@ -17,9 +18,9 @@ class Solution(object):
 
         for i in range(num_buckets):
             if buckets[i]:
-                min_in_bucket, max_in_bucket = min(buckets[i]), max(buckets[i])
-                max_gap = max(max_gap, min_in_bucket - prev_max)
-                prev_max = max_in_bucket
+                min_bucket, max_bucket = min(buckets[i]), max(buckets[i])
+                max_gap = max(max_gap, min_bucket - prev_max)
+                prev_max = max_bucket
 
         return max_gap
 
