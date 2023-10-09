@@ -1,22 +1,20 @@
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        hashmap={}
-        maxLen=0
-        left=0
+        i= 0 
+        j = 0
+        maxDis = 0
+        char_set = set()
+        while j < len(s):
+            if s[j] not in char_set:
+                char_set.add(s[j])
+                j += 1
+                maxDis = max(maxDis, j - i)
+            else:
+                char_set.remove(s[i])
+                i += 1
+           
+        return maxDis
         
-
         
-        for i in range(len(s)):
-            char=s[i]
-            if char in hashmap and hashmap[char]>=left :
-                left = hashmap[char] + 1  
-                  
-            hashmap[char]=i
-            curr_len = i-left+1
-            maxLen=max(maxLen,curr_len)
-
-        return maxLen 
-
-
 
        
