@@ -1,22 +1,27 @@
 class Solution(object):
     def searchRange(self, nums, target):
-        left, right = 0 ,len(nums) -1
-        res=[]
+        left  = 0 
+        right = len(nums) - 1
+        res = [-1,-1]
         while left <= right:
-            mid = left + (right - left ) //2
-            if nums[mid] == target:
-                start = mid
-                end = mid
-                while start > 0 and nums[start - 1] == target:
-                    start -= 1
-                while end < len(nums)-1 and nums [end + 1] == target:
-                    end+=1
-                return [start,end]
-                
+            mid = left + (right - left) //2
+            if nums[mid] > target :
+                right = mid -1
             elif nums[mid] < target:
-                left+=1
+                left = mid + 1
             else:
-                right-=1
-        return [-1,-1]
+                res[0] = mid
+                res[1] = mid
+                
+                while res[0] > 0 and nums[res[0] - 1] == target:
+                      res[0] -= 1
+                    
+                while res[1] < len(nums) - 1 and nums[res[1] + 1] == target:
+                    res[1] += 1
+                
+                return res
+        return res
 
-        
+
+
+       
