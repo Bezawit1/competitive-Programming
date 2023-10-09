@@ -9,7 +9,7 @@ class Solution(object):
         hashmap_p={}
         hashmap_s={}
 
-        #initialize hash map p and frequency
+        #initialize hashmap p and frequency
         for char in p:
             hashmap_p[char]=hashmap_p.get(char,0)+1
         #initialize the window
