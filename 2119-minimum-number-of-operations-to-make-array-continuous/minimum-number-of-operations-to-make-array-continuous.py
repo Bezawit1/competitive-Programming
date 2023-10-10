@@ -3,7 +3,7 @@ class Solution(object):
       # sort the array and put it in a set to avoid duplicates
         unique_nums = sorted(set(nums))
         n = len(nums)
-        i = 0
+       
         j = 0
         min_ops = n
         for  i in range(len(unique_nums)):
