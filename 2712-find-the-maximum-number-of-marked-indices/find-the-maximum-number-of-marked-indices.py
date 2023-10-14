@@ -9,7 +9,6 @@ class Solution(object):
                 count+=2
                 i+=1
                 j+=1
-            
             else:
                 j+=1
         return count
