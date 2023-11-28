@@ -1,12 +1,13 @@
-class Solution(object):
+class Solution(object): 
     def maxCoins(self, piles):
         piles.sort(reverse=True)
+        right = len(piles)-1
         sum = 0
-        start_index = 1
-        end_index = int(2 * len(piles) / 3)
-
-        while start_index < end_index:
-            sum += piles[start_index]
-            start_index += 2
-
+        endindex = int(2 * len(piles) / 3)
+        for i in range(1,endindex,2):
+            sum+=piles[i]
         return sum
+     
+
+      
+        
