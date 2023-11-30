@@ -1,31 +1,31 @@
 class Solution(object):
-   def minimumRefill(self, plants, capacityA, capacityB):
-        left, right = 0, len(plants) - 1
-        waterA, waterB = capacityA, capacityB
-        refills = 0
-        while left <= right:
-			
-            if left != right and plants[left] > waterA:
-                waterA = capacityA
-                refills += 1
-			
-			
-            if left != right and plants[right] > waterB:
-                waterB = capacityB
-                refills += 1
-			
-			
-            if left == right:
-                max_water = max(waterA, waterB)
-                if plants[left] > max_water:
-                    refills += 1
-			
-			
-            waterA -= plants[left]
-            waterB -= plants[right]
-            left += 1
-            right -= 1
-        return refills
+    def minimumRefill(self, plants, capacityA, capacityB):
+        i = 0
+        j = len(plants) - 1
+        orgA = capacityA
+        orgB = capacityB
+        counter = 0
+        while i <= j :
+            if i!=j:
+               
+                if capacityA < plants[i]:
+                    counter+=1
+                    capacityA = orgA
+
+                if capacityB < plants[j]:
+                    counter+=1
+                    capacityB = orgB
+            if i == j:
+                max_water = max(capacityA, capacityB)
+                if plants[i] > max_water:
+                        counter += 1
+            capacityA-=plants[i]
+            capacityB-=plants[j]
+            i+=1
+            j-=1
+        return counter
 
 
+        
+        
         
