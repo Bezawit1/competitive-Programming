@@ -7,7 +7,6 @@ class Solution(object):
                 return nums1[i]
             if nums1[i] < nums2[j]:
                 i+=1
-        
             else:
                 j+=1
         return -1
