@@ -8,12 +8,12 @@ class Solution(object):
             merged+=word2[j]
             i+=1
             j+=1
-        if i != len(word1):
-            while i < len(word1):
+       
+        while i < len(word1):
                 merged+=word1[i]
                 i+=1
-        if j != len(word2):
-            while j < len(word2):
+       
+        while j < len(word2):
                 merged+=word2[j]
                 j+=1
         return merged
