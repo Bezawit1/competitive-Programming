@@ -1,13 +1,19 @@
 class Solution(object):
     def numIdenticalPairs(self, nums):
-        hashmap={}
-        good_pairs = 0
-        for i in nums:
-            hashmap[i] = hashmap.get(i,0)+1
-        for count in hashmap.values():
-            if count > 1:
-                good_pairs += (count * (count - 1)) // 2
-        
-        return good_pairs
+        nums.sort()
+        count = 0
+        for i in range(len(nums)):
+            for j in range (i+1 ,len(nums)):
+                if nums[i] == nums[j] and i < j:
+                    count+=1
+        return count
+
+         
+              
+            
+            
+
+
+
 
         
