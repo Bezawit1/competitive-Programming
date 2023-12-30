@@ -1,7 +1,6 @@
 class Solution(object):
     def selfDividingNumbers(self, left, right):
         res = []
-        
         for i in range (left , right+ 1):
             isDivisible = True
             n = i
