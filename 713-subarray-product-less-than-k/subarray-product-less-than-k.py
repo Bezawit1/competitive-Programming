@@ -1,19 +1,24 @@
 class Solution(object):
     def numSubarrayProductLessThanK(self, nums, k):
-        start_index = 0
-        end_index = 0
-        countArrays = 0
-        product = 1
+        i = 0
+        j = 0 
+        prod = 1
+        count = 0
+        while j < len(nums):
+            prod *= nums[j]
+            while prod >= k and i <= j:
+                prod /= nums[i]
+                i += 1
+            
+            
+            count += (j - i + 1)
 
-        while end_index < len(nums):
-            product *= nums[end_index]
-            while product >= k and start_index <= end_index:
-                product /= nums[start_index]
-                start_index += 1
+            j += 1
+                
+        return count
+           
 
-            countArrays += end_index - start_index + 1
-            end_index += 1
-
-        return countArrays
+                
 
 
+        
