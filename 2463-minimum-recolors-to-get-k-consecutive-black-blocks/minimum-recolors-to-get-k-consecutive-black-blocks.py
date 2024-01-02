@@ -1,16 +1,18 @@
 class Solution(object):
     def minimumRecolors(self, blocks, k):
-        min_ops = float('inf')
-        window_size = len(blocks) - k
-        
-
-        for i in range(window_size + 1):
+        min_ops = len(blocks)
+        count = 0
+        for i in range(len(blocks) - k + 1):
             left = i
-            right = i + k -1
-            subarray = blocks[left:right + 1]
-            count = subarray.count('W')
-            min_ops = min(min_ops, count)
-        return min_ops
+            right = i + k - 1
+            for num in blocks[left : right + 1]:
+                if num == 'W':
+                    count+=1
+            min_ops = min(min_ops , count)
+            count = 0
+        return  min_ops
+
+
             
-            
+        
         
