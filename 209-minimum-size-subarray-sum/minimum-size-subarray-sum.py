@@ -4,9 +4,9 @@ class Solution(object):
         j = 0 
         curr_sum = 0
         minDis = float('inf')
-        while  j < len(nums) and i < len(nums):
+        while  j < len(nums):
             curr_sum +=nums[j]
-            print(curr_sum)
+            
             while curr_sum >=target:
                   curr_sum-=nums[i]
                   minDis = min(minDis , j - i + 1)
