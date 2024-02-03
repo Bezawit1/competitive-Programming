@@ -3,8 +3,8 @@ class Solution(object):
             res = ''
             for i in t:
                 if i not in s:
-                    res+=i
+                    res=i
                 else:
                     if s.count(i)!=t.count(i):
-                       return i
+                       res = i
             return res
