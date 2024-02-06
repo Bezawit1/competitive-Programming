@@ -1,19 +1,11 @@
 class Solution(object):
     def numIdenticalPairs(self, nums):
-        nums.sort()
-        count = 0
+        countPairs = 0
         for i in range(len(nums)):
-            for j in range (i+1 ,len(nums)):
-                if nums[i] == nums[j] and i < j:
-                    count+=1
-        return count
+            for j in range(i+1 ,len(nums) ):
+                if nums[i] == nums[j]:
+                    countPairs+=1
+        return countPairs
 
-         
-              
-            
-            
-
-
-
-
+        
         
