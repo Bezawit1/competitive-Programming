@@ -8,5 +8,4 @@ class Solution(object):
             if count>freq:
                 res.append(num)
         return res
-
         
