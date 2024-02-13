@@ -1,15 +1,12 @@
 class Solution(object):
     def twoSum(self, nums, target):
         hashmap = {}
-        arr=[]
-        for i in range(0,len(nums)):
-            complement = target- nums[i]
-            if complement in hashmap:
-                arr.append(hashmap[complement])
-                arr.append(i)
-            hashmap[nums[i]] = i
-        return arr
-           
-
+        for i, num in enumerate(nums):
+            difference = target - num
+            if num in hashmap:
+                return [hashmap[num], i]
+            else:
+                hashmap[difference] = i
+        return []
        
         
