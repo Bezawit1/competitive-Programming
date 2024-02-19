@@ -3,7 +3,7 @@ class Solution(object):
         n = len(boxes)
         min_ops = [0] * n
 
-        # Calculate operations for each box
+        
         for i in range(n):
             ops = 0
             for j in range(n):
