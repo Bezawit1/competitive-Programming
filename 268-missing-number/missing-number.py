@@ -1,7 +1,12 @@
 class Solution(object):
     def missingNumber(self, nums):
-        n=len(nums)
-        expected_sum = n*(n+1)//2
-        actual_sum = sum(nums)
-        return expected_sum - actual_sum
+        n = len(nums)
+        original_sum = 0
+        for  i in range(len(nums)+1):
+            original_sum +=i
+        
+        missing_num = original_sum - sum(nums)
+        print(original_sum , sum(nums))
+        return missing_num
+       
         
