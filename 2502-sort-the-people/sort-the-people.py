@@ -1,10 +1,13 @@
 class Solution(object):
     def sortPeople(self, names, heights):
-        people = {}
-        for i in range(len(names)):
-            people[heights[i]] = names[i]
-        sorted_heights = sorted(people.keys(), reverse=True)
-        sorted_names = [people[height] for height in sorted_heights]
-        return sorted_names
+        for i in range(len(heights)):
+            min_idx = i
+            for j in range(i+1,len(heights)):
+                if heights[min_idx] < heights[j]:
+                    min_idx =j
+            heights[i],heights[min_idx] = heights[min_idx],heights[i]
+            names[i],names[min_idx] = names[min_idx],names[i]
+        return names
+                    
 
             
