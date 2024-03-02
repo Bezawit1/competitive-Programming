@@ -13,7 +13,7 @@ class Solution(object):
         for num in shorter_arr:
             counts[num] = counts.get(num, 0) + 1
 
-        # Find common elements and count occurrences
+        
         result = []
         for num in longer_arr:
             if num in counts and counts[num] > 0:
