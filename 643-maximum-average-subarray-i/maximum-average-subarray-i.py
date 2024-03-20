@@ -1,23 +1,25 @@
 class Solution(object):
     def findMaxAverage(self, nums, k):
-        maxAvg = float('-inf')
+        max_sum = 0
+        max_avg = float('-inf')
         curr_sum = sum(nums[:k])
-
-        for i in range(len(nums) - k + 1): 
-            curr_avg = curr_sum / float(k)
-            maxAvg = max(maxAvg, curr_avg)
-
-            if i + k < len(nums):
-                curr_sum -= nums[i]
-                curr_sum += nums[i + k]
-
-        return maxAvg
-
-
-
-        
+        print(curr_sum)
+        for i in range(len(nums)-k + 1):
+            left = i 
+            right = i+k
+            curr_avg =curr_sum/float(k)
+            max_avg = max(max_avg ,curr_avg)
+            if right  < len(nums):
+                curr_sum-=nums[left]
+                curr_sum+=nums[right]
+                
+            
+        return max_avg
         
 
+           
 
-        
-        
+
+       
+
+       
