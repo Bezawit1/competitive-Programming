@@ -1,24 +1,17 @@
 class Solution(object):
     def numSubarrayProductLessThanK(self, nums, k):
+        curr_prod =1
+        j =0 
         i = 0
-        j = 0 
-        prod = 1
         count = 0
         while j < len(nums):
-            prod *= nums[j]
-            while prod >= k and i <= j:
-                prod /= nums[i]
-                i += 1
+            curr_prod*=nums[j]
             
             
-            count += (j - i + 1)
-
-            j += 1
-                
+            while curr_prod >= k and i<=j:
+                curr_prod/=nums[i]
+                i+=1
+            count+=(j-i + 1)
+            j+=1
         return count
-           
-
-                
-
-
         
