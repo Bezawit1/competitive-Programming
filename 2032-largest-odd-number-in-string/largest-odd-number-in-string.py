@@ -1,10 +1,6 @@
 class Solution(object):
     def largestOddNumber(self, num):
-        new_num  = int(num)
-        while new_num:
-            if new_num%2 == 1:
-                return str(new_num)
-            else:
-               new_num//=10
+        for i in range(len(num) - 1, -1, -1):
+            if int(num[i]) % 2 == 1:
+                return num[:i + 1]
         return ""
-        
