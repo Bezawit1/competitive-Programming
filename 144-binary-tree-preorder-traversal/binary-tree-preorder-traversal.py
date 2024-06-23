@@ -6,15 +6,17 @@
 #         self.right = right
 class Solution(object):
     def preorderTraversal(self, root):
-        if root is None:
-            return []
-        res=[]
+        # root left right
+        res = []
+        if not root:
+            return 
         res.append(root.val)
-        leftP = self.preorderTraversal(root.left)
-       
-        rightP = self.preorderTraversal(root.right)
-        res +=leftP
-        res += rightP
+        if root.left:
+            left_node = self.preorderTraversal(root.left)
+            res.extend(left_node)
+        if root.right:
+
+            right_node = self.preorderTraversal(root.right)
+            res.extend(right_node)
         return res
-    
-       
+        
