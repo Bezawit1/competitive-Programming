@@ -6,7 +6,7 @@ class Solution:
         
         for i in range(min(k, len(nums1))):
             heappush(min_heap, (nums1[i] + nums2[0], i, 0))
-        print(min_heap)
+        
         result = []
         
         
