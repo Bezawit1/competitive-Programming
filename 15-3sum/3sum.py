@@ -1,9 +1,9 @@
-class Solution(object):
-    def threeSum(self, nums):
-            nums.sort()
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+       
             n = len(nums)
             res = []
-        
+            nums.sort()
             for i in range(n  - 2):
                 if i > 0 and nums[i] == nums [i -1]:
                     continue
@@ -26,11 +26,3 @@ class Solution(object):
                         k-=1
 
             return res
-
-            
-
-        
-
-
-       
-        
